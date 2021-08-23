@@ -1,0 +1,22 @@
+version: "3"
+
+networks:
+  stack_ponte:
+    external: true
+
+services:
+  frontend_games:
+    container_name: "frontend_games"
+    image: "node:lts-alpine"
+    working_dir: /app
+    volumes:
+      - "${APPPATH}/front:/app"
+    command: "yarn dev"
+    networks:
+      - stack_ponte
+    ports:
+      - "3091:3000"
+    labels:
+      - "traefik.enable=true"
+      - traefik.http.routers.frontgames.rule=Host(`frontgames.${DOMAIN}`)
+      - traefik.http.services.frontgames.loadbalancer.server.port=3000
