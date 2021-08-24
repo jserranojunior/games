@@ -1,4 +1,5 @@
 <template>
+  <Carousel></Carousel>
   <div class="flex flex-wrap justify-center mt-20">
     <SCard>
       <template #header>
@@ -12,8 +13,12 @@
 </template>
 
 <script>
+import Carousel from "./components/Carousel.vue";
 import { inject, onBeforeMount } from "vue";
 export default {
+  components: {
+    Carousel,
+  },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   setup() {
     const useInstitucional = inject("institucional");
