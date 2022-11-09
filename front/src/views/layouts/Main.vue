@@ -1,5 +1,5 @@
 <template>
-  <div class="p-2 bg-gray-700 min-h-screen">
+  <div class="p-2 bg-gray-900 min-h-screen">
     <div class="rounded-2xl">
       <!-- <Navbar></Navbar> -->
     </div>
